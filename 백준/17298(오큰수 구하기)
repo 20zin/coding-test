@@ -1,0 +1,19 @@
+n = int(input())
+ans = [0] * n
+A = list(map,input().split())
+mystack = []
+
+
+for i in range(n):
+    while mystack and mystack[-1] < A[i]:
+        ans[mystack.pop()] = A[i]
+    mystack.append()
+
+while mystack:
+    ans[mystack.pop()] = -1
+
+result = ""
+for i in range(n):
+    result += str(ans[i]) +" "
+
+print(result)
