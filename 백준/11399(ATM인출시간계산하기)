@@ -2,6 +2,7 @@ N = map(int, input().split())
 S = [0] * N
 A = list(map(int, input().split()))
 
+#삽입정렬
 for i in range(1, N):
     insert_point = i
     insert_value = A[i]
