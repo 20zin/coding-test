@@ -1,0 +1,6 @@
+def solution(strings, n):
+    answer = []
+    for i in [chr(x) for x in range(97, 97+26)]:
+        k = [s for s in strings if s[n] == i]
+        answer.extend(sorted(k))
+    return answer
