@@ -1,0 +1,16 @@
+def solution(n, words):
+    prev = None
+    word_set = set()
+    for i, word in enumerate(words):
+        if prev:
+            if prev != word[0] or word in word_set:
+                who = i%n+1
+                turn = i//n+1
+                return [who,turn]
+            else:
+                prev = word[-1]
+                word_set.add(word)
+        else:
+            prev = word[-1]
+            word_set.add(word)
+    return [0,0]
