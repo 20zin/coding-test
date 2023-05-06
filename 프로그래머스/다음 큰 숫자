@@ -1,0 +1,7 @@
+def solution(n):
+    answer = n+1 // n보다 큰 자연수
+    check = bin(n).count("1")
+    while True: //맞을때까지
+        if check == bin(answer).count("1"): //1개수가 같으면 answer반환
+            return answer
+        answer += 1//아니면 위에 answer에 1큰거 더해줘서 while문 다시
