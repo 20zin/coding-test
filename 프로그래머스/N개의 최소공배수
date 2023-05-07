@@ -1,0 +1,15 @@
+import math
+def lcm(a,b):
+    return int(a * b //math.gcd(a,b))
+
+def solution(arr):
+    answer = 0
+    stk = []
+
+    for i in arr:
+        if not stk:
+            stk.append(i)
+        else:
+            stk.append(lcm(stk.pop(),i))
+
+    return stk[-1]
