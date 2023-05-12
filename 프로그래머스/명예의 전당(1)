@@ -1,0 +1,12 @@
+def solution(k, score):
+    answer = []
+    stk = []
+    for i in score:
+        if len(stk) < k:
+            stk.append(i)
+        else:
+            if min(stk) < i:
+                stk.remove(min(stk))
+                stk.append(i)
+        answer.append(min(stk))
+    return answer
